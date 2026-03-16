@@ -16,6 +16,7 @@
     stateMachines: ['State Machine 1'],
     onLoad: function () {
       if (riveInstance) riveInstance.resizeDrawingSurfaceToCanvas();
+      const vmInstance = riveInstance.getVMInstance();
     }
   });
 
