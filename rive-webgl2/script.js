@@ -11,7 +11,7 @@
     layout: layout,
     autoplay: true,
     autoBind: true,
-    src: './animation.riv',
+    src: 'up-and-running.riv',
     artboard: 'Artboard',
     stateMachines: ['State Machine 1'],
     onLoad: function () {
