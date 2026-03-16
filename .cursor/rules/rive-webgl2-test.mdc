@@ -1,0 +1,15 @@
+---
+description: Conventions for the Rive WebGL2 test project
+globs: rive-webgl2/index.html,rive-webgl2/styles.css,rive-webgl2/script.js
+alwaysApply: false
+---
+
+# Rive WebGL2 Test Project
+
+- Use the **WebGL2** runtime only: load from unpkg with `<script src="https://unpkg.com/@rive-app/webgl2@latest"></script>` (do not use `@rive-app/webgl`).
+- Keep CSS in a separate file (e.g. `styles.css`) and JS in a separate file (e.g. `script.js`); HTML only links to them and the Rive script.
+- Use a single full-viewport `<canvas id="riveCanvas">` with styles in CSS: `html, body { height: 100%; }` and canvas `display: block; width: 100%; height: 100%`.
+- Use the global `rive` object (e.g. `rive.Rive`, `rive.Layout`, `rive.Fit`). Do not use npm or ES module imports.
+- Instantiate with `layout: new rive.Layout({ fit: rive.Fit.Layout })`, `autoplay: true`, `autoBind: true`, `src`, `artboard` (e.g. `'Artboard'`), and `stateMachines` (e.g. `['State Machine 1']`). Use placeholders or names that match the .riv file.
+- In the Rive instance's load handler, call `riveInstance.resizeDrawingSurfaceToCanvas()`.
+- On `window.resize` and when `devicePixelRatio` changes, call `resizeDrawingSurfaceToCanvas()` again.
